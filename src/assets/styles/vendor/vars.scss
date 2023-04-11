@@ -1,3 +1,25 @@
+//width
+$containerWidth: 1600px;
+$baseFontSize: 18px;
+
+//padding container
+$containerPaddingLeft: 50px;
+$containerPaddingRight: 50px;
+
+$containerPaddingMediaLeft: 30px;
+$containerPaddingMediaRight: 30px;
+
+//breakpoints
+$desktop-sm: 1440px - 1;
+
+$tablets-lg: 1200px - 1;
+$tablets-md: 1024px - 1;
+$tablets-sm: 768px - 1;
+
+$phones-lg: 580px - 1;
+$phones-md: 480px - 1;
+$phones-sm: 320px - 1;
+
 //colors
 $white: #FFFFFF;
 
