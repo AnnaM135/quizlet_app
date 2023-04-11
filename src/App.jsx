@@ -1,8 +1,10 @@
+import "./assets/styles/styles.scss";
+
 function App() {
 
   return (
     <div>
-     Start Project
+     <h1>Start Quizlet Project</h1>
     </div>
   )
 }
