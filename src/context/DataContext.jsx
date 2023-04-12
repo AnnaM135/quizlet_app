@@ -7,6 +7,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import enTranslation from "../locales/en.json";
 import ruTranslation from "../locales/ru.json";
 import { languagesData } from "../data/LaguagesData";
+import { fetchData } from "../utils/api";
 
 i18n
   .use(LanguageDetector)
@@ -33,6 +34,9 @@ export const DataProvider = ({children}) => {
     const [selectedLanguage, setSelectedLanguage] = useState({})
     const [isOpenLanguageSelect, setOpenLanguageSelect] = useState(false)
 
+    const [allLevels, setAllLevels] = useState({});
+    const [isLoadingData, setLoadingData] = useState(false);
+
     const handleLanguageChange = useCallback(
         (activeLanguage) => {
             i18n.changeLanguage(activeLanguage);
@@ -45,6 +49,13 @@ export const DataProvider = ({children}) => {
         const activeLanguage = languages.find((active) => active.value === i18n.language)
         setSelectedLanguage(activeLanguage)
     }, [isOpenLanguageSelect, selectedLanguage])
+
+    useEffect(() => {
+        fetchData("/src/data/database.json", setAllLevels);
+        setLoadingData(true);
+        window.history.pushState({}, "", i18n.language);
+      }, [i18n.language]);
+
     return (
         <DataContext.Provider value={{
             languages,
