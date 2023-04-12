@@ -87,4 +87,9 @@ img {
         padding-inline-end: $containerPaddingMediaRight;
     }
 
+    @include tablets-sm {
+        height: auto;
+        padding-block: 40px;
+    }
+
 }

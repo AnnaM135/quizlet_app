@@ -1,10 +1,13 @@
+import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import _ from "./homePage.module.scss";
 import QuizImg from "../../assets/images/takeQuiz.png";
-import { useTranslation } from "react-i18next";
+import { SelectLevel } from "../../components/SelectLevel/SelectLevel";
+import DataContext from "../../context/DataContext";
 
 export default function HomePage() {
   const { t } = useTranslation();
-
+  const { isLoadingData } = useContext(DataContext)
   return (
     <main className={`${_._}`}>
       <section className={`${_.__left} ${ _.__main}`}>
@@ -13,7 +16,8 @@ export default function HomePage() {
       </section>
       <section className={`${_.__right} ${ _.__main}`}>
           <h1 className={_.__title}>{t("greeting")}</h1>
-          {/* Choose Level Component */}
+          {isLoadingData && <SelectLevel />}
+          
       </section>
     </main>
   );

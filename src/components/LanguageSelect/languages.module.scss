@@ -16,6 +16,10 @@
             align-items: center;
             height: 100%;
             column-gap: 10px;
+
+            @include tablets-sm {
+                justify-content: flex-end;
+            }
         }
 
         &_flag {

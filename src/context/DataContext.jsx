@@ -36,6 +36,8 @@ export const DataProvider = ({children}) => {
 
     const [allLevels, setAllLevels] = useState({});
     const [isLoadingData, setLoadingData] = useState(false);
+    const [selectedLevel, setSelectedLevel] = useState("");
+    const [quizData, setQuizData] = useState(null);
 
     const handleLanguageChange = useCallback(
         (activeLanguage) => {
@@ -54,15 +56,30 @@ export const DataProvider = ({children}) => {
         fetchData("/src/data/database.json", setAllLevels);
         setLoadingData(true);
         window.history.pushState({}, "", i18n.language);
-      }, [i18n.language]);
-
+      }, [selectedLanguage]);
+    
+    const handleLevelSelect = () => {
+        if (selectedLevel === "") return;
+        setSelectedLevel(selectedLevel);
+        const activeLevel = allLevels.quizlet?.find(
+            (item) => item.level === selectedLevel
+          );
+        setQuizData(activeLevel);
+        setLoadingData(false);
+    };  
     return (
         <DataContext.Provider value={{
             languages,
             selectedLanguage,
             isOpenLanguageSelect,
             setOpenLanguageSelect,
-            handleLanguageChange
+            handleLanguageChange,
+            isLoadingData,
+            levels: allLevels?.quizlet,
+            selectedLevel,
+            setSelectedLevel,
+            handleLevelSelect,
+            quizData
         }}>
             {children}
         </DataContext.Provider>

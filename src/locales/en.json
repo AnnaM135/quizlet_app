@@ -1,4 +1,6 @@
 {
   "greeting": "Welcome to Quizlet",
-  "encouraging": "Take a Quiz be more creative in your work"
+  "encouraging": "Take a Quiz be more creative in your work",
+  "chooseTitle": "Choose to level & start playing",
+  "levelBtn": "Choose Level"
 }

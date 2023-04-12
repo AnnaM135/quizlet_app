@@ -9,6 +9,9 @@
 
     &_title {
         color: $grey_800;
+        @include tablets-sm {
+            text-align: center;
+        }
     }
 
     &_main {
@@ -17,13 +20,25 @@
         display: flex;
         flex-direction: column;
         padding-inline: 50px;
-        justify-content: center;
+        padding-top: 10%;
+        @include tablets-sm {
+            padding-inline: 0;
+        }
     }
     
     &_left {
         align-items: center;
         background-color: #FAF9FF;
         width: 100%;
+        @include tablets-sm {
+           order: 2;
+        }
+    }
+
+    &_right{
+        @include tablets-sm {
+            order: 1;
+        }
     }
     
     &_main_img {
@@ -31,6 +46,9 @@
         height: 250px;
         background-color: #FAF9FF;
         border-radius: 50%;
+        @include tablets-sm {
+            order: 2;
+        }
     }
     &_main_text {
         max-width: 330px;
@@ -38,5 +56,8 @@
         font-size: 20px;
         text-align: center;
         color: $grey_700;
+        @include tablets-sm {
+            order: 1;
+        }
     }   
 }

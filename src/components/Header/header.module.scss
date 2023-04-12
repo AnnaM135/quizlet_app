@@ -2,4 +2,10 @@
     padding-top: 10px;
     display: flex;
     justify-content: space-between;
+
+    @include phones-md {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        padding-top: 0;
+    }
 }
