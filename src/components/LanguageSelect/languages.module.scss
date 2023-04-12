@@ -1,18 +1,21 @@
 ._ {
-    display: flex;
-    justify-content: flex-end;
+    width: 130px;
+    height: 45px;
+    position: relative;
+    cursor: pointer;
 
-    &_selector {
-        padding-top: 10px;
-        transition: 500ms linear;
-        cursor: pointer;
-
+    &_selector {     
+        position: absolute;
+        left: 0;
+        top: 50px;
+        width: 100%;
+        visibility: hidden;
+        transition: 500ms ease-out;
         &_country {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            height: 100%;
             column-gap: 10px;
-            margin-bottom: 10px;
         }
 
         &_flag {
@@ -22,9 +25,11 @@
 
         &_name {
             font-size: 15px;
+
         }
         &_arrow {
             rotate: 90deg;
+            transition: 500ms ease-out;
         }
     }
 }
