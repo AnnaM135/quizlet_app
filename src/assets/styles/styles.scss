@@ -15,14 +15,18 @@ html {
 
 body {
     min-width: 320px;
-    min-height: 100vh;
+    height: 100vh;
 
     line-height: 1.42;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 
     overflow-x: hidden;
+    background: rgb(125,136,242);
+    background: linear-gradient(0deg, rgba(125,136,242,1) 2%, rgba(125,136,242,1) 96%);
+    padding: 50px 80px;
 }
 
 h1,
@@ -74,7 +78,10 @@ img {
     margin: 0 auto;
     padding-inline-start: $containerPaddingLeft;
     padding-inline-end: $containerPaddingRight;
-
+    background-color: $white;
+    border-radius: 40px;
+    height: calc(100vh - 100px);
+    
     @include tablets-lg {
         padding-inline-start: $containerPaddingMediaLeft;
         padding-inline-end: $containerPaddingMediaRight;

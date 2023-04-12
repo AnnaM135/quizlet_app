@@ -1,0 +1,30 @@
+._ {
+    display: flex;
+    justify-content: flex-end;
+
+    &_selector {
+        padding-top: 10px;
+        transition: 500ms linear;
+        cursor: pointer;
+
+        &_country {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            column-gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        &_flag {
+            width: 25px;
+            height: 25px;
+        }
+
+        &_name {
+            font-size: 15px;
+        }
+        &_arrow {
+            rotate: 90deg;
+        }
+    }
+}

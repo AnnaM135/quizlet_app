@@ -1,10 +1,14 @@
 import "./assets/styles/styles.scss";
+import Header from "./components/Header/Header";
+import HomePage from "./pages/home/HomePage";
+
 
 function App() {
 
   return (
-    <div>
-     <h1>Start Quizlet Project</h1>
+    <div className="container">
+      <Header />
+      <HomePage />
     </div>
   )
 }
