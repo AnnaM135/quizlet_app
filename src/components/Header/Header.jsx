@@ -1,4 +1,4 @@
-import { Languages } from "../LanguageSelect/Languages";
+import Languages from "../LanguageSelect/Languages";
 import { Logo } from "../Logo/Logo";
 import _ from "./header.module.scss";
 

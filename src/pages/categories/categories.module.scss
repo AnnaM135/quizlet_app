@@ -50,19 +50,19 @@
         row-gap: 10px;
         
         cursor: pointer;
-        transition: 400ms linear;
+        transition: 300ms linear;
 
         &:hover {
-            mix-blend-mode: difference;;
-
+            // mix-blend-mode: difference;
+            text-shadow: 3px 3px 10px black;
         }
 
         @include tablets-sm {
             border-bottom-right-radius: 20px;
         }
     }
+    
     &_card_img {
-        // border: 2px solid red;
         width: 50%;
         height: 70px;
     }
@@ -72,5 +72,14 @@
     }
     &_card_text {        
         font-size: 14px;
+    }
+
+    &_card_inp {
+        display: none;
+    }
+    &_card_active {
+        scale: 1.1;
+        box-shadow: inset 0px 0px 10px rgb(184, 182, 182);
+        text-shadow: 0 0 3px white;
     }
 }

@@ -38,6 +38,19 @@ export const DataProvider = ({children}) => {
     const [isLoadingData, setLoadingData] = useState(false);
     const [selectedLevel, setSelectedLevel] = useState("");
     const [quizData, setQuizData] = useState(null);
+    const [selectedTopic, setSelectedTopic] = useState("");
+    const [selectedAnswar, setSelectedAnswar] = useState("");
+    const [questions, setQuestions] = useState({});
+    const [question, setQuestion] = useState("");
+    const [answer, setAnswer] = useState([]);
+    const [loadingQuiz, setLoadingQuiz] = useState(false);
+    const [activeStep, setActiveStep] = useState(0);
+    const [showResult, setShowResult] = useState(false);
+    const [result, setResult] = useState({
+      score: 0,
+      correctAnswers: 0,
+      wrongAnswers: 0,
+    });
 
     const handleLanguageChange = useCallback(
         (activeLanguage) => {
@@ -66,6 +79,18 @@ export const DataProvider = ({children}) => {
         setQuizData(activeLevel);
         setLoadingData(false);
     };  
+    const startQuiz = useCallback(() => {
+      if (selectedTopic === "" || !quizData) return;
+      const activeCategory = quizData.allTopic.find(
+        (item) => item.topic === selectedTopic
+      );
+      const { questions: activeQuestions } = activeCategory;
+      setQuestions(activeCategory);
+      setQuestion(activeQuestions[activeStep][selectedLanguage.value].question);
+      setAnswer(activeQuestions[activeStep][selectedLanguage.value].choices);
+      setLoadingQuiz(true);
+    }, [activeStep, quizData, selectedTopic]);
+
     return (
         <DataContext.Provider value={{
             languages,
@@ -80,7 +105,10 @@ export const DataProvider = ({children}) => {
             handleLevelSelect,
             quizData,
             allTopic: quizData?.allTopic,
-
+            selectedTopic,
+            setSelectedTopic,
+            startQuiz,
+            loadingQuiz
         }}>
             {children}
         </DataContext.Provider>
