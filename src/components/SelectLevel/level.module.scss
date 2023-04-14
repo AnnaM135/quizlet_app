@@ -7,7 +7,7 @@
         align-items: center;
     }
     &_title {
-        color: #b5b3b3;
+        color: $grey_200;
         font-size: 15px;
     }
     &_select {
@@ -47,27 +47,7 @@
             font-size: 15px;
         }
     }
-    &_btn {
-        margin-top: 50px;
-        background-color: $purple_100;
-        color: white;
-        border: none;
-        border-radius: 50px;
-        width: 180px;
-        height: 45px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: 500ms linear;
-
-        &:hover {
-            background-color: $purple_200;
-            text-shadow: 0 0 5px white;
-        }
-
-        @include tablets-sm {
-            width: 100%;
-        }
-    }
+   
 
         
 }

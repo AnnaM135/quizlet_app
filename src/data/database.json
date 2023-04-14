@@ -6,6 +6,7 @@
         "allTopic": [
           {
             "topic": "Javascript Beginner",
+            "description": "Lorem ipsum dolor sit amet consectetur.",
             "totalQuestions": 4,
             "questions": [
               {
@@ -85,6 +86,130 @@
           },
           {
             "topic": "Phyton Beginner",
+            "description": "Lorem ipsum dolor sit amet consectetur.",
+            "totalQuestions": 2,
+            "questions": [
+              {
+                "en": {
+                  "question": "Phyton 1, Which of the following methods can be used to display data in some form using Javascript?",
+                  "choices": [
+                    "document.write()",
+                    "console.log()",
+                    "window.alert",
+                    "All of the above"
+                  ],
+                  "correctAnswer": "All of the above"
+                },
+                "ru": {
+                  "question": "Phyton 1, Какой из следующих методов можно использовать для отображения данных в той или иной форме с помощью Javascript?",
+                  "choices": [
+                    "document.write()",
+                    "console.log()",
+                    "window.alert",
+                    "All of the above ru"
+                  ],
+                  "correctAnswer": "Все вышеперечисленное"
+                }
+              },
+              {
+                "en": {
+                  "question": "Phyton 2, How can a datatype be declared to be a constant type?",
+                  "choices": ["const", "var", "let", "constant"],
+                  "correctAnswer": "const"
+                },
+                "ru": {
+                  "question": "Phyton 2, Как можно объявить тип данных константным?",
+                  "choices": ["const", "var", "let", "constant"],
+                  "correctAnswer": "const"
+                }
+              }
+            ]
+          },
+          {
+            "topic": "Phyton Beginner",
+            "description": "Lorem ipsum dolor sit amet consectetur.",
+            "totalQuestions": 2,
+            "questions": [
+              {
+                "en": {
+                  "question": "Phyton 1, Which of the following methods can be used to display data in some form using Javascript?",
+                  "choices": [
+                    "document.write()",
+                    "console.log()",
+                    "window.alert",
+                    "All of the above"
+                  ],
+                  "correctAnswer": "All of the above"
+                },
+                "ru": {
+                  "question": "Phyton 1, Какой из следующих методов можно использовать для отображения данных в той или иной форме с помощью Javascript?",
+                  "choices": [
+                    "document.write()",
+                    "console.log()",
+                    "window.alert",
+                    "All of the above ru"
+                  ],
+                  "correctAnswer": "Все вышеперечисленное"
+                }
+              },
+              {
+                "en": {
+                  "question": "Phyton 2, How can a datatype be declared to be a constant type?",
+                  "choices": ["const", "var", "let", "constant"],
+                  "correctAnswer": "const"
+                },
+                "ru": {
+                  "question": "Phyton 2, Как можно объявить тип данных константным?",
+                  "choices": ["const", "var", "let", "constant"],
+                  "correctAnswer": "const"
+                }
+              }
+            ]
+          },
+          {
+            "topic": "Phyton Beginner",
+            "description": "Lorem ipsum dolor sit amet consectetur.",
+            "totalQuestions": 2,
+            "questions": [
+              {
+                "en": {
+                  "question": "Phyton 1, Which of the following methods can be used to display data in some form using Javascript?",
+                  "choices": [
+                    "document.write()",
+                    "console.log()",
+                    "window.alert",
+                    "All of the above"
+                  ],
+                  "correctAnswer": "All of the above"
+                },
+                "ru": {
+                  "question": "Phyton 1, Какой из следующих методов можно использовать для отображения данных в той или иной форме с помощью Javascript?",
+                  "choices": [
+                    "document.write()",
+                    "console.log()",
+                    "window.alert",
+                    "All of the above ru"
+                  ],
+                  "correctAnswer": "Все вышеперечисленное"
+                }
+              },
+              {
+                "en": {
+                  "question": "Phyton 2, How can a datatype be declared to be a constant type?",
+                  "choices": ["const", "var", "let", "constant"],
+                  "correctAnswer": "const"
+                },
+                "ru": {
+                  "question": "Phyton 2, Как можно объявить тип данных константным?",
+                  "choices": ["const", "var", "let", "constant"],
+                  "correctAnswer": "const"
+                }
+              }
+            ]
+          },
+          {
+            "topic": "Phyton Beginner",
+            "description": "Lorem ipsum dolor sit amet consectetur.",
             "totalQuestions": 2,
             "questions": [
               {
@@ -131,6 +256,7 @@
         "allTopic": [
           {
             "topic": "Javascript Advanced",
+            "description": "Lorem ipsum dolor sit amet consectetur.",
             "totalQuestions": 4,
             "questions": [
               {
@@ -210,6 +336,7 @@
           },
           {
             "topic": "Phyton Advanced",
+            "description": "Lorem ipsum dolor sit amet consectetur.",
             "totalQuestions": 2,
             "questions": [
               {

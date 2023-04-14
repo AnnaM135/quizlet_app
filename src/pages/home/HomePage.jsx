@@ -5,7 +5,7 @@ import QuizImg from "../../assets/images/takeQuiz.png";
 import { SelectLevel } from "../../components/SelectLevel/SelectLevel";
 import DataContext from "../../context/DataContext";
 
-export default function HomePage() {
+export function HomePage() {
   const { t } = useTranslation();
   const { isLoadingData } = useContext(DataContext)
   return (

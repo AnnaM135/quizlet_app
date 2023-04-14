@@ -56,8 +56,7 @@ export const DataProvider = ({children}) => {
         fetchData("/src/data/database.json", setAllLevels);
         setLoadingData(true);
         window.history.pushState({}, "", i18n.language);
-      }, [selectedLanguage]);
-    
+      }, []);
     const handleLevelSelect = () => {
         if (selectedLevel === "") return;
         setSelectedLevel(selectedLevel);
@@ -79,7 +78,9 @@ export const DataProvider = ({children}) => {
             selectedLevel,
             setSelectedLevel,
             handleLevelSelect,
-            quizData
+            quizData,
+            allTopic: quizData?.allTopic,
+
         }}>
             {children}
         </DataContext.Provider>

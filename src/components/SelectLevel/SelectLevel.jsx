@@ -4,7 +4,7 @@ import DataContext from "../../context/DataContext";
 import _ from "./level.module.scss";
 
 export function SelectLevel() {
-  const {levels, setSelectedLevel, handleLevelSelect} = useContext(DataContext)  
+  const {levels, selectedLevel, setSelectedLevel, handleLevelSelect} = useContext(DataContext)  
   const { t } = useTranslation();
 
   return (
@@ -18,7 +18,7 @@ export function SelectLevel() {
                 </label>
             ))}
         </form>
-        <button className={_.__btn} onClick={handleLevelSelect}>{t("levelBtn")}</button>
+        <button className="medium_button" disabled={selectedLevel === ""} onClick={handleLevelSelect}>{t("levelBtn")}</button>
     </div>
   )
 }

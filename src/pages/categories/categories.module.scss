@@ -1,0 +1,76 @@
+._ {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 20px;
+    text-align: center;
+
+    &_level {
+        color: $grey_200;
+        font-size: 15px;
+    }
+    &_title {
+        max-width: 750px;
+        width: 100%;
+        color: $grey_500;
+        font-size: 18px;
+
+        @include phones-lg {
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+    }
+    &_cards {
+        margin-top: 25px;   
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+    }
+    &_card {
+        max-width: 210px;
+        width: 100%;
+        padding: 10px 15px;
+        min-height: 220px;
+        color: white;
+        box-shadow: 0 0 8px $grey_200;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: cover;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 10px;
+        
+        cursor: pointer;
+        transition: 400ms linear;
+
+        &:hover {
+            mix-blend-mode: difference;;
+
+        }
+
+        @include tablets-sm {
+            border-bottom-right-radius: 20px;
+        }
+    }
+    &_card_img {
+        // border: 2px solid red;
+        width: 50%;
+        height: 70px;
+    }
+    &_card_title {
+        margin-top: 5px;
+        font-size: 15px;
+    }
+    &_card_text {        
+        font-size: 14px;
+    }
+}

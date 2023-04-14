@@ -2,5 +2,8 @@
   "greeting": "Welcome to Quizlet",
   "encouraging": "Take a Quiz be more creative in your work",
   "chooseTitle": "Choose to level & start playing",
-  "levelBtn": "Choose Level"
+  "levelBtn": "Choose Level",
+  "categoryTitle": "Choose one from categories below & see how many questions you can answer correctly out of 5 questions!",
+  "selectedLevel": "You have selected the",
+  "start": "Start Quiz"
 }
