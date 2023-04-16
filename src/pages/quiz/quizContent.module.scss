@@ -1,0 +1,66 @@
+._ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 70%;
+    padding-top: 30px;
+
+    &_title {
+        color: $grey_500;
+        font-size: 25px;
+        text-align: center;
+        @include phones-lg {
+            font-size: 18px;
+        }
+    }
+    &_questions_count {
+        color: $purple_200;
+        font-weight: bold;
+        font-size: 30px;
+        @include phones-lg {
+            font-size: 20px;
+        }
+    }
+    &_answers{
+        display: grid;
+        place-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 400px));
+        grid-gap: 40px;
+        margin-top: 70px;
+        width: 80%;
+        @include desktop-sm {
+            width: 100%;
+        }
+        &_option{
+            border: 1px solid $purple_200;
+            box-shadow: 0 0 2px $grey_700;
+            padding: 10px 20px;
+            border-radius: 3px;
+            // margin: 10px 0;
+            display: flex;
+            justify-content: baseline;
+            cursor: pointer;
+            transition: 300ms ease;
+    
+            &:hover {
+                background-color: $purple_200;
+                color: white;
+            }
+        }
+        &_option:hover &_inp {
+            accent-color: white;
+        }
+    
+        &_inp{
+            scale: 1.3;
+            accent-color: $purple_100;
+        }
+        
+        &_name {
+            margin-left: 20px;
+            font-size: 15px;
+        }
+    }
+
+}

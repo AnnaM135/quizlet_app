@@ -24,9 +24,14 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
     overflow-x: hidden;
-    background: rgb(125,136,242);
     background: linear-gradient(0deg, rgba(125,136,242,1) 2%, rgba(125,136,242,1) 96%);
     padding: 50px 80px;
+    @include tablets-sm {
+        height: 100%;
+    }
+    @include phones-md {
+        padding-inline: 10px;
+    }
 }
 
 h1,
