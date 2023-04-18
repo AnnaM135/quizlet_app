@@ -1,23 +1,17 @@
 ._ {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 70%;
-    padding-top: 30px;
+    @include column_center;
 
     &_title {
         color: $grey_500;
         font-size: 25px;
         text-align: center;
+        max-width: 900px;
         @include phones-lg {
             font-size: 18px;
         }
     }
     &_questions_count {
-        color: $purple_200;
-        font-weight: bold;
-        font-size: 30px;
+        @include purpleTitle(30px);
         @include phones-lg {
             font-size: 20px;
         }
@@ -32,6 +26,7 @@
         @include desktop-sm {
             width: 100%;
         }
+        
         &_option{
             border: 1px solid $purple_200;
             box-shadow: 0 0 2px $grey_700;
@@ -44,11 +39,19 @@
             transition: 300ms ease;
     
             &:hover {
-                background-color: $purple_200;
+                border: 1px solid $grey_100;
+                background-color: $grey_200;
                 color: white;
+                box-shadow: inset 0px 10px 10px 2px rgba(0, 0, 0, 0.25);
             }
         }
-        &_option:hover &_inp {
+
+        &_option_active {
+            background-color: $purple_100;
+            color: white;
+        }
+
+        &_option_active &_inp{
             accent-color: white;
         }
     

@@ -49,7 +49,7 @@ export function Categories() {
           </label>
         ))}
       </div>
-      <button className="medium_button" onClick={startQuiz}>{t("start")}</button>
+      <button className="filled_button" onClick={startQuiz}>{t("start")}</button>
     </div>
   );
 }

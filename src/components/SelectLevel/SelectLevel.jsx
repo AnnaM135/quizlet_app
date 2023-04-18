@@ -30,7 +30,7 @@ export function SelectLevel() {
         ))}
       </form>
       <button
-        className="medium_button"
+        className="filled_button"
         disabled={selectedLevel === ""}
         onClick={handleLevelSelect}
       >

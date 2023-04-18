@@ -72,6 +72,7 @@ export const DataProvider = ({ children }) => {
     setLoadingData(true);
     window.history.pushState({}, "", i18n.language);
   }, []);
+
   const handleLevelSelect = () => {
     if (selectedLevel === "") return;
     setSelectedLevel(selectedLevel);
@@ -80,7 +81,10 @@ export const DataProvider = ({ children }) => {
     );
     setQuizData(activeLevel);
     setLoadingData(false);
+    setLoadingQuiz(false);
+
   };
+
   const startQuiz = useCallback(() => {
     if (selectedTopic === "" || !quizData) return;
     const activeCategory = quizData.allTopic.find(
@@ -119,6 +123,19 @@ export const DataProvider = ({ children }) => {
     }
   }, [activeStep]);
 
+  const playAgain = () => {
+    setSelectedTopic(selectedTopic)
+    setLoadingData(false)
+    setShowResult(false)
+    setActiveStep(0)
+  }
+
+  const backToHome = () => {
+    setLoadingData(true)
+    setShowResult(false)
+    setActiveStep(0)
+  }
+
   return (
     <DataContext.Provider
       value={{
@@ -143,8 +160,12 @@ export const DataProvider = ({ children }) => {
         totalQuestions: questions?.totalQuestions,
         question,
         answer,
+        selectedAnswer,
         setSelectedAnswer,
         nextStep,
+        result,
+        backToHome,
+        playAgain
       }}
     >
       {children}

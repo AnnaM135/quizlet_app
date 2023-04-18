@@ -1,0 +1,29 @@
+@mixin column_center() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 70%;
+    padding-top: 30px;
+}
+
+@mixin medium_button($background, $color, $border ) {
+    background-color: $background;
+    color: $color;
+    border: $border;
+}
+
+@mixin medium_button_hover($backgroundHover, $colorHover) {
+    &:hover {
+        background-color: $backgroundHover;
+        color: $colorHover;
+    
+      }
+}
+
+@mixin purpleTitle($fontSize) {
+    color: $purple_200;
+    font-weight: bold;
+    font-size: $fontSize;
+
+}

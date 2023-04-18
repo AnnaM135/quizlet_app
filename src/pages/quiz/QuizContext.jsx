@@ -4,6 +4,7 @@ import _ from "./quizContent.module.scss";
 import { Question } from "../../components/Quiz/Question";
 import { Answers } from "../../components/Quiz/Answers";
 import { NextButton } from "../../components/Quiz/NextButton";
+import { Result } from "../../components/Result/Result";
 
 export function QuizContext() {
   const { selectedTopic, activeStep, totalQuestions, showResult } =
@@ -12,7 +13,7 @@ export function QuizContext() {
   return (
     <div className={_._}>
       {showResult ? (
-        <>Result</>
+        <Result />
       ) : (
         <>
           <h2 className={_.__title}>Category: {selectedTopic}</h2>

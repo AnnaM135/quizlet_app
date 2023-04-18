@@ -1,0 +1,102 @@
+._ {
+   @include column_center;
+    row-gap: 13px;
+
+    @include phones-lg {
+        align-items: flex-end;
+    }
+
+    &_salutation {
+        @include purpleTitle(35px);
+        @include phones-lg {
+            font-size: 20px;
+        }
+    }
+
+    &_salutation_score {
+        @include purpleTitle(20px);
+        @include phones-lg {
+            font-size: 18px;
+        }
+    }
+
+    &_title {
+        color: $grey_300;
+        font-size: 20px;
+        text-align: center;
+        max-width: 900px;
+
+        @include phones-lg {
+            font-size: 18px;
+            text-align: end;
+            max-width: 300px;
+        }
+    }
+
+    &_content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include phones-lg {
+            justify-content: space-between;
+        }
+    }
+
+    &_content_img {
+        width: 20%;
+        @include phones-lg {
+            &:nth-child(3) {
+                display: none;
+            }
+            &:nth-child(1) {
+                transform: translate(15px, -52px) scale(4, 5);
+            }
+        }
+    }
+
+    &_content_information {
+        display: grid;
+        justify-items: center;
+        @include phones-lg {
+            justify-items: flex-end;
+        }
+    }
+
+    &_content_title {
+        color: $grey_500;
+        font-size: 18px;
+        text-align: center;
+        max-width: 900px;
+        font-weight: bold;
+        @include phones-lg {
+            font-size: 18px;
+        }
+    }
+
+    &_content_score {
+        @include purpleTitle(25px);
+        @include phones-lg {
+            font-size: 18px;
+        }
+    }
+
+    &_buttons {
+        display: flex;
+        column-gap: 25px;
+        @include tablets-sm {
+            flex-direction: column;
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+
+    &_transparent_button {
+        @include medium_button(transparent, $grey_700, 1px solid $grey_500);
+        &:hover {
+            @include medium_button_hover($grey_200, white);
+        }
+        @include tablets-sm {
+            margin-top: 20px;
+        }
+    }
+}

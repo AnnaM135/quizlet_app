@@ -7,7 +7,7 @@ export function NextButton() {
 
   return (
     <button
-      className="medium_button"
+      className="filled_button"
       onClick={nextStep}
       disabled={selectedAnswer === ""}
     >
