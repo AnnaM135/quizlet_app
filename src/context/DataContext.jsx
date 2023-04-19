@@ -7,7 +7,8 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import enTranslation from "../locales/en.json";
 import ruTranslation from "../locales/ru.json";
 import { languagesData } from "../data/LaguagesData";
-import { fetchData } from "../utils/api";
+// import { fetchData } from "../utils/api";
+import { fakeData } from "../data/database";
 
 i18n
   .use(LanguageDetector)
@@ -68,7 +69,8 @@ export const DataProvider = ({ children }) => {
   }, [isOpenLanguageSelect, selectedLanguage]);
 
   useEffect(() => {
-    fetchData("/src/data/database.json", setAllLevels);
+    // fetchData("/src/data/database.json", setAllLevels);
+    setAllLevels(fakeData)
     setLoadingData(true);
     window.history.pushState({}, "", i18n.language);
   }, []);
