@@ -1,10 +1,12 @@
-import _ from "../../pages/quiz/quizContent.module.scss";
 import { useContext } from "react";
 import DataContext from "../../context/DataContext";
+import _ from "../../pages/quiz/quizContent.module.scss";
 
 export function Answers() {
-  const { answer, selectedAnswer, setSelectedAnswer } = useContext(DataContext);
+  const { answer, selectedAnswer, setSelectedAnswer, error } = useContext(DataContext);
   return (
+    <>
+    <span className="error_title">{error}</span>
     <ul className={_.__answers}>
       {answer.map((answer) => (
         <li key={answer}>
@@ -21,5 +23,6 @@ export function Answers() {
         </li>
       ))}
     </ul>
+    </>
   );
 }

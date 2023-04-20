@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { useTranslation } from "react-i18next";
-import _ from "./homePage.module.scss";
-import QuizImg from "../../assets/images/takeQuiz.png";
 import { SelectLevel } from "../../components/SelectLevel/SelectLevel";
 import DataContext from "../../context/DataContext";
+import _ from "./homePage.module.scss";
+import QuizImg from "../../assets/images/takeQuiz.png";
 
 export function HomePage() {
   const { t } = useTranslation();

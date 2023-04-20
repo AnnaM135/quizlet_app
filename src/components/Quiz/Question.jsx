@@ -1,6 +1,6 @@
-import _ from "../../pages/quiz/quizContent.module.scss";
 import { useContext } from "react";
 import DataContext from "../../context/DataContext";
+import _ from "../../pages/quiz/quizContent.module.scss";
 
 export function Question() {
   const { question } = useContext(DataContext);

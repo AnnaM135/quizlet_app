@@ -4,6 +4,16 @@
   "chooseTitle": "Choose to level & start playing",
   "levelBtn": "Choose Level",
   "categoryTitle": "Choose one from categories below & see how many questions you can answer correctly out of 5 questions!",
-  "selectedLevel": "You have selected the",
-  "start": "Start Quiz"
+  "selectedLevel": "You have selected the ",
+  "start": "Start Quiz",
+  "next": "Next",
+  "congratulation": "Congratulation",
+  "score": "Your quiz score is ",
+  "answered": "You answered",
+  "correct": "question correct",
+  "playAgain": "Play Again",
+  "backToHome": "Back to Home",
+  "errorForLevel": "Please choose the Level",
+  "errorForCategory": "Please choose the Category",
+  "errorForAnswer": "Please choose the answer"
 }

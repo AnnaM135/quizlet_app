@@ -49,6 +49,10 @@
         @include tablets-sm {
             order: 2;
         }
+        @include phones-lg {
+            border-radius: 10%;
+            object-fit: contain;
+        }
     }
     &_main_text {
         max-width: 330px;

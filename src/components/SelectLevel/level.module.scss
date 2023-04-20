@@ -9,6 +9,9 @@
     &_title {
         color: $grey_200;
         font-size: 15px;
+        @include tablets-sm {
+            text-align: center;
+        }
     }
     &_select {
         margin-top: 30px;
@@ -20,6 +23,7 @@
         }
 
         &_option{
+            display: flex;
             border: 1px solid $purple_200;
             box-shadow: 0 0 2px $grey_700;
             padding: 10px 20px;
@@ -29,7 +33,7 @@
             transition: 300ms ease;
 
             &:hover {
-                background-color: $purple_200;
+                background-color: $purple_100;
                 color: white;
             }
         }
@@ -40,6 +44,9 @@
         &_inp{
             scale: 1.3;
             accent-color: $purple_100;
+            @include tablets-sm {
+                scale: 1.1;
+            }
         }
         
         &_name {

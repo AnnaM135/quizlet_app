@@ -27,7 +27,7 @@
         max-width: 900px;
 
         @include phones-lg {
-            font-size: 18px;
+            font-size: 13px;
             text-align: end;
             max-width: 300px;
         }
@@ -49,7 +49,8 @@
                 display: none;
             }
             &:nth-child(1) {
-                transform: translate(15px, -52px) scale(4, 5);
+                // transform: translate(15px, -52px) scale(4, 5);
+                transform: translate(15px, -115px) scale(3, 3);
             }
         }
     }

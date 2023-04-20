@@ -1,4 +1,3 @@
-import _ from "./categories.module.scss";
 import { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import DataContext from "../../context/DataContext";
@@ -6,9 +5,11 @@ import {
   categoriesCardColors,
   categoriesCardImages,
 } from "../../data/categoryData";
+import _ from "./categories.module.scss";
+
 export function Categories() {
   const { t } = useTranslation();
-  const { selectedLevel, allTopic, selectedTopic, setSelectedTopic, startQuiz } =
+  const { selectedLevel, allTopic, selectedTopic, setSelectedTopic, startQuiz, error } =
     useContext(DataContext);
 
   return (
@@ -17,6 +18,8 @@ export function Categories() {
       <h4 className={_.__level}>
         {t("selectedLevel")} {selectedLevel} Level
       </h4>
+      <span className="error_title">{error}</span>
+
       <div className={_.__cards}>
         {allTopic?.map((card, index) => (
           <label

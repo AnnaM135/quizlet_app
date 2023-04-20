@@ -4,13 +4,15 @@ import DataContext from "../../context/DataContext";
 import _ from "./level.module.scss";
 
 export function SelectLevel() {
-  const { levels, selectedLevel, setSelectedLevel, handleLevelSelect } =
+  const { levels, selectedLevel, setSelectedLevel, handleLevelSelect, error } =
     useContext(DataContext);
   const { t } = useTranslation();
 
   return (
     <div className={_._}>
       <h3 className={_.__title}>{t("chooseTitle")}</h3>
+      <span className="error_title">{error}</span>
+
       <form className={_.__select}>
         {levels?.map((item) => (
           <label
@@ -29,13 +31,12 @@ export function SelectLevel() {
           </label>
         ))}
       </form>
-      <button
-        className="filled_button"
-        disabled={selectedLevel === ""}
-        onClick={handleLevelSelect}
-      >
-        {t("levelBtn")}
-      </button>
+        <button
+          className="filled_button"
+          onClick={handleLevelSelect}
+        >
+          {t("levelBtn")}
+        </button>
     </div>
   );
 }

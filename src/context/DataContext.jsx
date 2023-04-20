@@ -28,7 +28,7 @@ i18n
 const DataContext = createContext({});
 
 export const DataProvider = ({ children }) => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const languages = languagesData;
   const [selectedLanguage, setSelectedLanguage] = useState({});
@@ -51,6 +51,7 @@ export const DataProvider = ({ children }) => {
     correctAnswers: 0,
     wrongAnswers: 0,
   });
+  const [error, setError] = useState("");
 
   const handleLanguageChange = useCallback(
     (activeLanguage) => {
@@ -75,8 +76,13 @@ export const DataProvider = ({ children }) => {
     window.history.pushState({}, "", i18n.language);
   }, []);
 
+  
+
   const handleLevelSelect = () => {
-    if (selectedLevel === "") return;
+    if (selectedLevel === "") {
+      setError(() => t("errorForLevel"))
+      return
+    };
     setSelectedLevel(selectedLevel);
     const activeLevel = allLevels.quizlet?.find(
       (item) => item.level === selectedLevel
@@ -84,11 +90,18 @@ export const DataProvider = ({ children }) => {
     setQuizData(activeLevel);
     setLoadingData(false);
     setLoadingQuiz(false);
-
   };
+  useEffect(() => {
+    if(selectedLevel || selectedLanguage.value){
+      setError("")
+    };
+  }, [selectedLevel, selectedLanguage.value])
 
   const startQuiz = useCallback(() => {
-    if (selectedTopic === "" || !quizData) return;
+    if (selectedTopic === "" || !quizData) {
+      setError(() => t("errorForCategory"))
+      return
+    };
     const activeCategory = quizData.allTopic.find(
       (item) => item.topic === selectedTopic
     );
@@ -99,7 +112,21 @@ export const DataProvider = ({ children }) => {
     setLoadingQuiz(true);
   }, [activeStep, quizData, selectedTopic]);
 
+  useEffect(() => {
+    if(selectedTopic){
+      setError("")
+    };
+    if(selectedAnswer){
+      setError("")
+    };
+  }, [selectedTopic, selectedAnswer])
+
+
   const nextStep = useCallback(() => {
+    if(selectedAnswer === "") {
+      setError(() => t("errorForAnswer"))
+      return
+    }
     if (showResult) return;
     setSelectedAnswer("");
     const isCorrect =
@@ -167,7 +194,8 @@ export const DataProvider = ({ children }) => {
         nextStep,
         result,
         backToHome,
-        playAgain
+        playAgain,
+        error
       }}
     >
       {children}

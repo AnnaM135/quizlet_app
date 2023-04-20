@@ -1,17 +1,19 @@
-import _ from "../../pages/quiz/quizContent.module.scss";
+import { useTranslation } from "react-i18next";
 import { useContext } from "react";
 import DataContext from "../../context/DataContext";
 
 export function NextButton() {
-  const { selectedAnswer, nextStep } = useContext(DataContext);
+  const { t } = useTranslation();
+
+  const { nextStep } = useContext(DataContext);
 
   return (
     <button
       className="filled_button"
       onClick={nextStep}
-      disabled={selectedAnswer === ""}
+      // disabled={selectedAnswer === ""}
     >
-      Next
+      {t("next")}
     </button>
   );
 }
